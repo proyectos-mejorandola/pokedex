@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
       <!-- pokemon -->
       <div ng-controller="PokemonController as pkmCtrl">
         <div class="page-header">
@@ -39,6 +39,7 @@
           <div class="col-md-6">
             <img class="avatar center-block" ng-src="{{pkmCtrl.pokemon.name | imageify}}">
           </div>
+          <!-- Tabs -->
           <div class="col-md-6" ng-controller="TabsController as tabs">
             <ul class="nav nav-tabs nav-justified">
               <li ng-class="{ active:tabs.tab === 1 }"><a href="#" ng-click="tabs.selectTab(1)">Pokédex</a></li>
@@ -122,7 +123,47 @@
               </div>
             </div>
           </div>
+          <!-- /tabs -->
         </div>
+        <!-- comments -->
+        <button class="btn btn-primary">Show comments <span class="badge">2</span></button>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h1 class="panel-title">Comments <button class="close pull-right">&times;</button></h1>
+          </div>
+          <div class="panel-body">
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <div class="col-sm-6">
+                  <textarea placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
+                </div>
+                <div class="col-sm-4">
+                  <input type="email" placeholder="Please enter your email address" class="form-control">
+                  <label>
+                    <input id="anonymous" type="checkbox">
+                    Anonymous
+                  </label>
+                </div>
+                <div class="col-sm-2">
+                  <button class="btn btn-lg">Comment</button>
+                </div>
+              </div>
+            </form>
+            <blockquote>
+              <p>OMG Bulbasaur is AMAZING!!!</p>
+              <footer>
+                Comment by <a href="mailto:pepe@pepe.com">pepe@pepe.com</a> on <span>Sep 12, 2014, 11:00:00 PM</span>
+              </footer>
+            </blockquote>
+            <blockquote>
+              <p>Nah, I hate it -_-</p>
+              <footer>
+                Comment by <em>Anonymous</em> on <span>Sep 12, 2014, 11:00:00 PM</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+        <!-- /comments -->
       </div>
       <!-- /pokemon -->
     </div>
