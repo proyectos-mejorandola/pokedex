@@ -37,7 +37,7 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <img class="avatar center-block" ng-src="img/pokemons/{{pkmCtrl.pokemon.name | lowercase}}.jpg">
+            <img class="avatar center-block" ng-src="{{pkmCtrl.pokemon.name | imageify}}">
           </div>
           <div class="col-md-6" ng-controller="TabsController as tabs">
             <ul class="nav nav-tabs nav-justified">
@@ -112,7 +112,7 @@
               <div ng-show="tabs.tab === 3">
                 <div class="text-center" ng-repeat="pokemon in pkmCtrl.pokemon.evolution">
                   <a href="#">
-                    <img src="img/pokemons/{{pokemon | lowercase}}.jpg" width="160">
+                    <img src="{{pokemon | imageify}}" width="160">
                     <p>
                       <strong>{{pokemon}}</strong>
                     </p>
