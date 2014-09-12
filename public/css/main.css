@@ -1,0 +1,20 @@
+body {
+  padding-top: 50px;
+}
+
+.navbar-brand {
+  font-weight: 800;
+}
+
+.navbar-brand img {
+  width: 24px;
+}
+
+.avatar {
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.nav-tabs {
+  margin-bottom: 10px;
+}

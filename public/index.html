@@ -2,23 +2,77 @@
 <html ng-app="pokedex">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pokédex</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.1/angular.min.js"></script>
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div ng-controller="PokemonController as pkmCtrl">
-      <h1>{{pkmCtrl.pokemon.name}} #{{pkmCtrl.pokemon.id}}</h1>
-      <h2>{{pkmCtrl.pokemon.species}}</h2>
-      <img src="img/{{pkmCtrl.pokemon.name | lowercase}}.jpg">
-      <h2>Pokédex</h2>
-      <ul>
-        <li><strong>Type</strong> {{pkmCtrl.pokemon.type.join(', ')}}</li>
-        <li><strong>Height</strong> {{pkmCtrl.pokemon.height}}</li>
-        <li><strong>Weight</strong> {{pkmCtrl.pokemon.weight}}</li>
-        <li><strong>Abilities</strong> {{pkmCtrl.pokemon.abilities.join(', ')}}</li>
-      </ul>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png">
+            Pokédex
+          </a>
+        </div>
+      </div>
     </div>
+    <div class="container">
+      <!-- pokemon -->
+      <div ng-controller="PokemonController as pkmCtrl">
+        <div class="page-header">
+          <h1>
+            {{pkmCtrl.pokemon.name}}
+            <small>{{pkmCtrl.pokemon.species}}</small>
+            <span class="label label-primary pull-right">#{{pkmCtrl.pokemon.id}}</span>
+          </h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="avatar center-block" ng-src="img/pokemons/{{pkmCtrl.pokemon.name | lowercase}}.jpg">
+          </div>
+          <div class="col-md-6">
+            <ul class="nav nav-tabs nav-justified">
+              <li class="active"><a href="#">Pokédex</a></li>
+              <li><a href="#">Stats</a></li>
+              <li><a href="#">Evolution</a></li>
+            </ul>
+            <div class="tab-content">
+              <div>
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <strong>Type</strong>
+                    <span class="pull-right">{{pkmCtrl.pokemon.type.join(', ')}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Height</strong>
+                    <span class="pull-right">{{pkmCtrl.pokemon.height}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Weight</strong>
+                    <span class="pull-right">{{pkmCtrl.pokemon.weight}}</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Abilities</strong>
+                    <span class="pull-right">{{pkmCtrl.pokemon.abilities.join(', ')}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /pokemon -->
+    </div>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
