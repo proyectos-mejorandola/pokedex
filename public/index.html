@@ -41,13 +41,13 @@
           </div>
           <div class="col-md-6">
             <ul class="nav nav-tabs nav-justified">
-              <li class="active"><a href="#">Pokédex</a></li>
-              <li><a href="#">Stats</a></li>
-              <li><a href="#">Evolution</a></li>
+              <li ng-class="{ active:pkmCtrl.tab === 1 }"><a href="#" ng-click="pkmCtrl.selectTab(1)">Pokédex</a></li>
+              <li ng-class="{ active:pkmCtrl.tab === 2 }"><a href="#" ng-click="pkmCtrl.selectTab(2)">Stats</a></li>
+              <li ng-class="{ active:pkmCtrl.tab === 3 }"><a href="#" ng-click="pkmCtrl.selectTab(3)">Evolution</a></li>
             </ul>
             <div class="tab-content">
               <!-- Pokedex -->
-              <div>
+              <div ng-show="pkmCtrl.tab === 1">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>Type</strong>
@@ -76,7 +76,7 @@
                 </ul>
               </div>
               <!-- Stats -->
-              <div>
+              <div ng-show="pkmCtrl.tab === 2">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <strong>HP</strong>
@@ -109,7 +109,7 @@
                 </ul>
               </div>
               <!-- Evolution -->
-              <div>
+              <div ng-show="pkmCtrl.tab === 3">
                 <div class="text-center" ng-repeat="pokemon in pkmCtrl.pokemon.evolution">
                   <a href="#">
                     <img src="img/pokemons/{{pokemon | lowercase}}.jpg" width="160">
