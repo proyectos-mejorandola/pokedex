@@ -126,44 +126,46 @@
           <!-- /tabs -->
         </div>
         <!-- comments -->
-        <button class="btn btn-primary">Show comments <span class="badge">2</span></button>
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h1 class="panel-title">Comments <button class="close pull-right">&times;</button></h1>
-          </div>
-          <div class="panel-body">
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <div class="col-sm-6">
-                  <textarea placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
+        <div ng-controller="CommentsController as cmtsCtrl">
+          <button class="btn btn-primary" ng-hide="cmtsCtrl.show" ng-click="cmtsCtrl.toggle()">Show comments <span class="badge">{{cmtsCtrl.comments.length}}</span></button>
+          <div class="panel panel-primary" ng-show="cmtsCtrl.show">
+            <div class="panel-heading">
+              <h1 class="panel-title">Comments <button class="close pull-right" ng-click="cmtsCtrl.toggle()">&times;</button></h1>
+            </div>
+            <div class="panel-body">
+              <form class="form-horizontal" role="form">
+                <div class="form-group">
+                  <div class="col-sm-6">
+                    <textarea placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
+                  </div>
+                  <div class="col-sm-4">
+                    <input type="email" placeholder="Please enter your email address" class="form-control">
+                    <label>
+                      <input id="anonymous" type="checkbox">
+                      Anonymous
+                    </label>
+                  </div>
+                  <div class="col-sm-2">
+                    <button class="btn btn-lg">Comment</button>
+                  </div>
                 </div>
-                <div class="col-sm-4">
-                  <input type="email" placeholder="Please enter your email address" class="form-control">
-                  <label>
-                    <input id="anonymous" type="checkbox">
-                    Anonymous
-                  </label>
-                </div>
-                <div class="col-sm-2">
-                  <button class="btn btn-lg">Comment</button>
-                </div>
-              </div>
-            </form>
-            <blockquote>
-              <p>OMG Bulbasaur is AMAZING!!!</p>
-              <footer>
-                Comment by <a href="mailto:pepe@pepe.com">pepe@pepe.com</a> on <span>Sep 12, 2014, 11:00:00 PM</span>
-              </footer>
-            </blockquote>
-            <blockquote>
-              <p>Nah, I hate it -_-</p>
-              <footer>
-                Comment by <em>Anonymous</em> on <span>Sep 12, 2014, 11:00:00 PM</span>
-              </footer>
-            </blockquote>
+              </form>
+              <blockquote>
+                <p>OMG Bulbasaur is AMAZING!!!</p>
+                <footer>
+                  Comment by <a href="mailto:pepe@pepe.com">pepe@pepe.com</a> on <span>Sep 12, 2014, 11:00:00 PM</span>
+                </footer>
+              </blockquote>
+              <blockquote>
+                <p>Nah, I hate it -_-</p>
+                <footer>
+                  Comment by <em>Anonymous</em> on <span>Sep 12, 2014, 11:00:00 PM</span>
+                </footer>
+              </blockquote>
+            </div>
           </div>
         </div>
-        <!-- /comments -->
+                <!-- /comments -->
       </div>
       <!-- /pokemon -->
     </div>
