@@ -136,12 +136,12 @@
               <form class="form-horizontal" role="form">
                 <div class="form-group">
                   <div class="col-sm-6">
-                    <textarea placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
+                    <textarea ng-model="comment.body" placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
                   </div>
                   <div class="col-sm-4">
-                    <input type="email" placeholder="Please enter your email address" class="form-control">
+                    <input ng-model="comment.email" type="email" placeholder="Please enter your email address" class="form-control">
                     <label>
-                      <input id="anonymous" type="checkbox">
+                      <input ng-model="comment.anonymous" type="checkbox">
                       Anonymous
                     </label>
                   </div>
@@ -151,18 +151,12 @@
                 </div>
               </form>
               <blockquote>
-                <p>OMG Bulbasaur is AMAZING!!!</p>
+                <p>{{comment.body}}</p>
                 <footer>
-                  Comment by <a href="mailto:pepe@pepe.com">pepe@pepe.com</a> on <span>Sep 12, 2014, 11:00:00 PM</span>
+                  Comment by <a href="mailto:{{comment.email}}">{{comment.email}}</a> on <span>{{comment.date}}</span>
                 </footer>
-              </blockquote>
-              <blockquote>
-                <p>Nah, I hate it -_-</p>
-                <footer>
-                  Comment by <em>Anonymous</em> on <span>Sep 12, 2014, 11:00:00 PM</span>
-                </footer>
-              </blockquote>
             </div>
+              </blockquote>
           </div>
         </div>
                 <!-- /comments -->
