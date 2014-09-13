@@ -156,13 +156,13 @@
                   Comment by 
                   <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
                   <em ng-if="comment.anonymous">Anonymous</em>
-                  on <span>{{comment.date}}</span>
+                  on <span>{{comment.date | date : 'medium'}}</span>
                 </footer>
               </blockquote>
             </div>
           </div>
         </div>
-                <!-- /comments -->
+        <!-- /comments -->
       </div>
       <!-- /pokemon -->
     </div>
