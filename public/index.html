@@ -133,13 +133,13 @@
               <h1 class="panel-title">Comments <button class="close pull-right" ng-click="cmtsCtrl.toggle()">&times;</button></h1>
             </div>
             <div class="panel-body">
-              <form class="form-horizontal" role="form" ng-submit="cmtsCtrl.addComment()">
+              <form name="commentsForm" class="form-horizontal" role="form" ng-submit="cmtsCtrl.addComment()" novalidate>
                 <div class="form-group">
                   <div class="col-sm-6">
-                    <textarea ng-model="cmtsCtrl.comment.body" placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
+                    <textarea ng-model="cmtsCtrl.comment.body" placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control" required></textarea>
                   </div>
                   <div class="col-sm-4">
-                    <input ng-model="cmtsCtrl.comment.email" ng-disabled="cmtsCtrl.comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control">
+                    <input ng-model="cmtsCtrl.comment.email" ng-disabled="cmtsCtrl.comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control" ng-required="!cmtsCtrl.comment.anonymous">
                     <label>
                       <input ng-model="cmtsCtrl.comment.anonymous" ng-change="cmtsCtrl.anonymousChanged()" type="checkbox">
                       Anonymous
@@ -149,6 +149,7 @@
                     <button type="submit" class="btn btn-lg">Comment</button>
                   </div>
                 </div>
+                <h2>Valid: {{commentsForm.$valid}}<h2>
               </form>
               <blockquote ng-repeat="comment in cmtsCtrl.comments">
                 <p>{{comment.body}}</p>
