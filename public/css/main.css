@@ -117,5 +117,11 @@ body {
   border: solid 1px #9b6470;
 }
 
+.ng-invalid.ng-dirty {
+  border-color: #D9230F;
+}
 
+.ng-valid.ng-dirty {
+  border-color: #468847;
+}
 

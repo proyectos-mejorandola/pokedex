@@ -133,7 +133,7 @@
               <h1 class="panel-title">Comments <button class="close pull-right" ng-click="cmtsCtrl.toggle()">&times;</button></h1>
             </div>
             <div class="panel-body">
-              <form name="commentsForm" class="form-horizontal" role="form" ng-submit="cmtsCtrl.addComment()" novalidate>
+              <form name="commentsForm" class="form-horizontal" role="form" ng-submit="commentsForm.$valid && cmtsCtrl.addComment()" novalidate>
                 <div class="form-group">
                   <div class="col-sm-6">
                     <textarea ng-model="cmtsCtrl.comment.body" placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control" required></textarea>
@@ -149,7 +149,6 @@
                     <button type="submit" class="btn btn-lg">Comment</button>
                   </div>
                 </div>
-                <h2>Valid: {{commentsForm.$valid}}<h2>
               </form>
               <blockquote ng-repeat="comment in cmtsCtrl.comments">
                 <p>{{comment.body}}</p>
