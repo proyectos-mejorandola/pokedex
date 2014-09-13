@@ -49,32 +49,7 @@
             <div class="tab-content">
               <!-- Pokedex -->
               <div ng-show="tabs.tab === 1">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <strong>Type</strong>
-                    <span class="pull-right">
-                      <span class="label type type-{{type | lowercase}}" ng-repeat="type in pkmCtrl.pokemon.type">
-                        {{type}}
-                      </span>
-                    </span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Height</strong>
-                    <span class="pull-right">{{pkmCtrl.pokemon.height}}</span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Weight</strong>
-                    <span class="pull-right">{{pkmCtrl.pokemon.weight}}</span>
-                  </li>
-                  <li class="list-group-item">
-                    <strong>Abilities</strong>
-                    <ul>
-                      <li ng-repeat="ability in pkmCtrl.pokemon.abilities">
-                        {{ability}}
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                <pokemon-data></pokemon-data>
               </div>
               <!-- Stats -->
               <div ng-show="tabs.tab === 2">
