@@ -139,7 +139,7 @@
                     <textarea ng-model="comment.body" placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control"></textarea>
                   </div>
                   <div class="col-sm-4">
-                    <input ng-model="comment.email" type="email" placeholder="Please enter your email address" class="form-control">
+                    <input ng-model="comment.email" ng-disabled="comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control">
                     <label>
                       <input ng-model="comment.anonymous" type="checkbox">
                       Anonymous
@@ -153,7 +153,10 @@
               <blockquote>
                 <p>{{comment.body}}</p>
                 <footer>
-                  Comment by <a href="mailto:{{comment.email}}">{{comment.email}}</a> on <span>{{comment.date}}</span>
+                  Comment by 
+                  <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
+                  <em ng-if="comment.anonymous">Anonymous</em>
+                  on <span>{{comment.date}}</span>
                 </footer>
             </div>
               </blockquote>
