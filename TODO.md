@@ -4,6 +4,8 @@
 
 * Implement Pokémon Card as a Custom Directive
 
+* Change TabsController to use $scope and implement isActive function to remove the logic in the template
+
 * Order comments by date, new comments must go first
 
 * Implement a search form by name (with automatic preview)
