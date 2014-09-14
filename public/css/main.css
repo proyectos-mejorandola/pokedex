@@ -126,18 +126,33 @@ body {
 }
 
 .pokemon {
-  padding: 20px;
-  margin-bottom: 10px;
-  border: solid 1px #D9230F;
-  border-radius: 20px;
+  height: 350px;
 }
 
-.pokemon:hover {
-  border: solid 3px #D9230F;
+.pokemon h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+}
+
+.pokemon h1 > small {
+  color: #ccc;
 }
 
 .pokemon img {
-  width: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 200px;
+  max-height: 220px;
+}
+
+.pokemon .panel-body {
+  position: relative;
+  height: 250px;
 }
 
 .pokemon pokemon-type {
