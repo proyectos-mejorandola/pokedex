@@ -11,7 +11,8 @@
 
     $routeProvider
       .when('/', {
-        templateUrl: 'views/pokedex.html'
+        templateUrl: 'views/pokedex.html',
+        controller: 'PokedexController'
       })
       .when('/pokemon/:id', {
         templateUrl: 'views/pokemon.html',
