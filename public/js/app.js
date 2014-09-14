@@ -11,9 +11,15 @@
 
     $routeProvider
       .when('/', {
+        templateUrl: 'views/pokedex.html'
+      })
+      .when('/pokemon/:id', {
         templateUrl: 'views/pokemon.html',
         controller: 'PokemonController',
         controllerAs: 'pkmCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
 
   }]);
