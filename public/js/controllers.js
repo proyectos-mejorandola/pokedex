@@ -8,13 +8,14 @@
 
     }])
 
-    .controller('PokemonController', ['$scope', 'pokemonService', function ($scope, pokemonService) {
+    .controller('PokemonController', ['$scope', '$routeParams', 'pokemonService', function ($scope, $routeParams, pokemonService) {
+      var name = $routeParams.name;
       $scope.pokemon = {};
 
-      pokemonService.byName('bulbasaur')
+      pokemonService.byName(name)
       .then(function (data) {
         $scope.pokemon = data;
-      })
+      });
     }])
 
     .controller('TabsController', function () {
