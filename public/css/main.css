@@ -62,7 +62,7 @@ body {
   border: solid 1px #c183c1;
 }
 
-.type-eletric {
+.type-electric {
   background-color: #f8d030;
   border: solid 1px #a1871f;
 }
@@ -138,5 +138,9 @@ body {
 
 .pokemon img {
   width: 300px;
+}
+
+.pokemon pokemon-type {
+  font-size: 22px;
 }
 
