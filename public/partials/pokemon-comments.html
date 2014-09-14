@@ -7,7 +7,7 @@
     <form name="commentsForm" class="form-horizontal" role="form" ng-submit="commentsForm.$valid && cmtsCtrl.addComment()" novalidate>
       <div class="form-group">
         <div class="col-sm-6">
-          <textarea ng-model="cmtsCtrl.comment.body" placeholder="Please tell us what you think about {{pkmCtrl.pokemon.name}}" class="form-control" required></textarea>
+          <textarea ng-model="cmtsCtrl.comment.body" placeholder="Please tell us what you think about {{pokemon.name}}" class="form-control" required></textarea>
         </div>
         <div class="col-sm-4">
           <input ng-model="cmtsCtrl.comment.email" ng-disabled="cmtsCtrl.comment.anonymous" type="email" placeholder="Please enter your email address" class="form-control" ng-required="!cmtsCtrl.comment.anonymous">
