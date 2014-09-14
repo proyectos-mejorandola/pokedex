@@ -4,6 +4,8 @@
 
 * Implement Pokémon Card as a Custom Directive
 
+* Implement dynamic title like 'Pokédex | Bulbasaur' (hint: $rootScope y ng-bind)
+
 * Change TabsController to use $scope and implement isActive function to remove the logic in the template
 
 * Order comments by date, new comments must go first
