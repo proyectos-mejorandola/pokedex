@@ -706,7 +706,6 @@
       "total": 320
     },
     "evolution": [
-      "Pichu",
       "Pikachu",
       "Raichu"
     ]
@@ -734,7 +733,6 @@
       "total": 485
     },
     "evolution": [
-      "Pichu",
       "Pikachu",
       "Raichu"
     ]
@@ -1106,7 +1104,6 @@
       "total": 270
     },
     "evolution": [
-      "Igglybuff",
       "Jigglypuff",
       "Wigglytuff"
     ]
@@ -1136,7 +1133,6 @@
       "total": 435
     },
     "evolution": [
-      "Igglybuff",
       "Jigglypuff",
       "Wigglytuff"
     ]
@@ -1225,8 +1221,7 @@
     "evolution": [
       "Oddish",
       "Gloom",
-      "Vileplume",
-      "Bellossom"
+      "Vileplume"
     ]
   },
   {
@@ -1255,8 +1250,7 @@
     "evolution": [
       "Oddish",
       "Gloom",
-      "Vileplume",
-      "Bellossom"
+      "Vileplume"
     ]
   },
   {
@@ -1285,8 +1279,7 @@
     "evolution": [
       "Oddish",
       "Gloom",
-      "Vileplume",
-      "Bellossom"
+      "Vileplume"
     ]
   },
   {
@@ -1711,8 +1704,7 @@
     "evolution": [
       "Poliwag",
       "Poliwhirl",
-      "Poliwrath",
-      "Politoed"
+      "Poliwrath"
     ]
   },
   {
@@ -1741,8 +1733,7 @@
     "evolution": [
       "Poliwag",
       "Poliwhirl",
-      "Poliwrath",
-      "Politoed"
+      "Poliwrath"
     ]
   },
   {
@@ -1772,8 +1763,7 @@
     "evolution": [
       "Poliwag",
       "Poliwhirl",
-      "Poliwrath",
-      "Politoed"
+      "Poliwrath"
     ]
   },
   {
@@ -2267,8 +2257,7 @@
     },
     "evolution": [
       "Slowpoke",
-      "Slowbro",
-      "Slowking"
+      "Slowbro"
     ]
   },
   {
@@ -2297,8 +2286,7 @@
     },
     "evolution": [
       "Slowpoke",
-      "Slowbro",
-      "Slowking"
+      "Slowbro"
     ]
   },
   {
@@ -2327,8 +2315,7 @@
     },
     "evolution": [
       "Magnemite",
-      "Magneton",
-      "Magnezone"
+      "Magneton"
     ]
   },
   {
@@ -2357,8 +2344,7 @@
     },
     "evolution": [
       "Magnemite",
-      "Magneton",
-      "Magnezone"
+      "Magneton"
     ]
   },
   {
@@ -2724,8 +2710,7 @@
       "total": 385
     },
     "evolution": [
-      "Onix",
-      "Steelix"
+      "Onix"
     ]
   },
   {
@@ -3032,10 +3017,8 @@
       "total": 455
     },
     "evolution": [
-      "Tyrogue",
       "Hitmonlee",
-      "Hitmonchan",
-      "Hitmontop"
+      "Hitmonchan"
     ]
   },
   {
@@ -3062,10 +3045,8 @@
       "total": 455
     },
     "evolution": [
-      "Tyrogue",
       "Hitmonlee",
-      "Hitmonchan",
-      "Hitmontop"
+      "Hitmonchan"
     ]
   },
   {
@@ -3092,8 +3073,7 @@
       "total": 385
     },
     "evolution": [
-      "Lickitung",
-      "Lickilicky"
+      "Lickitung"
     ]
   },
   {
@@ -3174,8 +3154,7 @@
     },
     "evolution": [
       "Rhyhorn",
-      "Rhydon",
-      "Rhyperior"
+      "Rhydon"
     ]
   },
   {
@@ -3204,8 +3183,7 @@
     },
     "evolution": [
       "Rhyhorn",
-      "Rhydon",
-      "Rhyperior"
+      "Rhydon"
     ]
   },
   {
@@ -3232,9 +3210,7 @@
       "total": 450
     },
     "evolution": [
-      "Happiny",
-      "Chansey",
-      "Blissey"
+      "Chansey"
     ]
   },
   {
@@ -3261,8 +3237,7 @@
       "total": 435
     },
     "evolution": [
-      "Tangela",
-      "Tangrowth"
+      "Tangela"
     ]
   },
   {
@@ -3315,8 +3290,7 @@
     },
     "evolution": [
       "Horsea",
-      "Seadra",
-      "Kingdra"
+      "Seadra"
     ]
   },
   {
@@ -3344,8 +3318,7 @@
     },
     "evolution": [
       "Horsea",
-      "Seadra",
-      "Kingdra"
+      "Seadra"
     ]
   },
   {
@@ -3486,7 +3459,6 @@
       "total": 460
     },
     "evolution": [
-      "Mime Jr.",
       "Mr. Mime"
     ]
   },
@@ -3515,8 +3487,7 @@
       "total": 500
     },
     "evolution": [
-      "Scyther",
-      "Scizor"
+      "Scyther"
     ]
   },
   {
@@ -3544,7 +3515,6 @@
       "total": 455
     },
     "evolution": [
-      "Smoochum",
       "Jynx"
     ]
   },
@@ -3571,9 +3541,7 @@
       "total": 490
     },
     "evolution": [
-      "Elekid",
-      "Electabuzz",
-      "Electivire"
+      "Electabuzz"
     ]
   },
   {
@@ -3599,9 +3567,7 @@
       "total": 495
     },
     "evolution": [
-      "Magby",
-      "Magmar",
-      "Magmortar"
+      "Magmar"
     ]
   },
   {
@@ -3786,12 +3752,7 @@
       "Vaporeon",
       "Jolteon",
       "Flareon",
-      "Sylveon",
-      "Eevee",
-      "Espeon",
-      "Umbreon",
-      "Leafeon",
-      "Glaceon"
+      "Eevee"
     ]
   },
   {
@@ -3820,12 +3781,7 @@
       "Vaporeon",
       "Jolteon",
       "Flareon",
-      "Sylveon",
-      "Eevee",
-      "Espeon",
-      "Umbreon",
-      "Leafeon",
-      "Glaceon"
+      "Eevee"
     ]
   },
   {
@@ -3854,12 +3810,7 @@
       "Vaporeon",
       "Jolteon",
       "Flareon",
-      "Sylveon",
-      "Eevee",
-      "Espeon",
-      "Umbreon",
-      "Leafeon",
-      "Glaceon"
+      "Eevee"
     ]
   },
   {
@@ -3888,12 +3839,7 @@
       "Vaporeon",
       "Jolteon",
       "Flareon",
-      "Sylveon",
-      "Eevee",
-      "Espeon",
-      "Umbreon",
-      "Leafeon",
-      "Glaceon"
+      "Eevee"
     ]
   },
   {
@@ -3920,9 +3866,7 @@
       "total": 395
     },
     "evolution": [
-      "Porygon",
-      "Porygon2",
-      "Porygon-Z"
+      "Porygon"
     ]
   },
   {
@@ -4091,7 +4035,6 @@
       "total": 540
     },
     "evolution": [
-      "Munchlax",
       "Snorlax"
     ]
   },
