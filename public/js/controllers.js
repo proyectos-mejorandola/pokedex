@@ -29,7 +29,6 @@
 
     .controller('PokemonController', ['$scope', '$routeParams', 'pokemonService', function ($scope, $routeParams, pokemonService) {
       var name = $routeParams.name;
-      $scope.pokemon = {};
 
       pokemonService.byName(name)
       .then(function (data) {

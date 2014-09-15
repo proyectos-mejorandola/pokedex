@@ -1,5 +1,13 @@
 <!-- pokemon -->
-<div>
+<div ng-if="!pokemon">
+  <div class="page-header">
+    <h1>Error</h1>
+  </div>
+  <div class="alert alert-danger">
+    <p>Pokémon not found</p>
+  </div>
+</div>
+<div ng-if="pokemon">
   <div class="page-header">
     <pokemon-name></pokemon-name>
   </div>
