@@ -43,6 +43,13 @@
       };
     })
 
+    .directive('pokemonCard', function () {
+      return {
+        retrict: 'E',
+        templateUrl: 'partials/pokemon-card.html'
+      }
+    })
+
     .directive('pokemonComments', ['pokemonService', function (pokemonService) {
       return {
         restrict: 'E',
