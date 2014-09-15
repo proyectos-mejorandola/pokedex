@@ -38,12 +38,16 @@
       });
     }])
 
-    .controller('TabsController', function () {
-      this.tab = 1;
+    .controller('TabsController', ['$scope', function ($scope) {
+      $scope.tab = 1;
 
-      this.selectTab = function (tab) {
-        this.tab = tab;
+      $scope.selectTab = function (tab) {
+        $scope.tab = tab;
       };
-    });
+
+      $scope.isActive = function (tab) {
+        return tab === $scope.tab;
+      };
+    }]);
 
 })(_);
