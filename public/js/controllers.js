@@ -1,8 +1,9 @@
 (function (_) {
 
   angular.module('pokedex.controllers', [])
-    .controller('PokedexController', ['$scope', '$routeParams', 'pokemonService', function ($scope, $routeParams, pokemonService) {
+    .controller('PokedexController', ['$rootScope', '$scope', '$routeParams', 'pokemonService', function ($rootScope, $scope, $routeParams, pokemonService) {
       var type = $routeParams.type;
+      $rootScope.title = "";
 
       if (type) {
         $scope.type = type;
@@ -27,11 +28,12 @@
 
     }])
 
-    .controller('PokemonController', ['$scope', '$routeParams', 'pokemonService', function ($scope, $routeParams, pokemonService) {
+    .controller('PokemonController', ['$rootScope', '$scope', '$routeParams', 'pokemonService', function ($rootScope, $scope, $routeParams, pokemonService) {
       var name = $routeParams.name;
 
       pokemonService.byName(name)
       .then(function (data) {
+        $rootScope.title = data.name;
         $scope.pokemon = data;
       });
     }])
