@@ -50,7 +50,7 @@
       }
     })
 
-    .directive('pokemonComments', ['pokemonService', function (pokemonService) {
+    .directive('pokemonComments', ['commentsService', function (commentsService) {
       return {
         restrict: 'E',
         templateUrl: 'partials/pokemon-comments.html',
@@ -61,12 +61,12 @@
           attributes.$observe('name', function (value) {
             if (value) {
               scope.name = value;
-              scope.comments = pokemonService.getComments(value);
+              scope.comments = commentsService.getComments(value);
             }
           });
         },
         controller: function ($scope) {
-          $scope.comments = pokemonService.getComments($scope.name);
+          $scope.comments = commentsService.getComments($scope.name);
           $scope.comment = {};
           $scope.show = false;
 
@@ -82,8 +82,8 @@
 
           $scope.addComment = function () {
             $scope.comment.date = Date.now();
-            pokemonService.saveComment($scope.name, $scope.comment);
-            $scope.comments = pokemonService.getComments($scope.name);
+            commentsService.saveComment($scope.name, $scope.comment);
+            $scope.comments = commentsService.getComments($scope.name);
             $scope.comment = {};
           };
 

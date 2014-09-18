@@ -1,7 +1,7 @@
 (function (_) {
 
   angular.module('pokedex.controllers', [])
-    .controller('PokedexController', ['$rootScope', '$scope', '$routeParams', 'pokemonService', function ($rootScope, $scope, $routeParams, pokemonService) {
+    .controller('PokedexController', ['$rootScope', '$scope', '$routeParams', 'Pokemon', function ($rootScope, $scope, $routeParams, Pokemon) {
       var type = $routeParams.type;
       var pokemons = [];
 
@@ -9,18 +9,14 @@
 
       if (type) {
         $scope.type = type;
-
-        pokemonService.byType(type).then(function (data) {
-          $scope.pokemons = pokemons = data;
+        $scope.pokemons = pokemons = Pokemon.query({ type: type.toLowerCase() }, function (data) {
           $scope.groupped = partition(data, 4);
         });
       } else {
-        pokemonService.all().then(function (data) {
-          $scope.pokemons = pokemons = data;
+        $scope.pokemons = pokemons = Pokemon.query(function (data) {
           $scope.groupped = partition(data, 4);
         });
       }
-
 
       $scope.search = function () {
         var result = pokemons;
@@ -36,7 +32,6 @@
         $scope.groupped = partition(result, 4);
       };
 
-
       function partition(data, n) {
         return _.chain(data).groupBy(function (element, index) {
           return Math.floor(index / n);
@@ -45,14 +40,14 @@
 
     }])
 
-    .controller('PokemonController', ['$rootScope', '$scope', '$routeParams', 'pokemonService', function ($rootScope, $scope, $routeParams, pokemonService) {
+    .controller('PokemonController', ['$rootScope', '$scope', '$routeParams', 'Pokemon', function ($rootScope, $scope, $routeParams, Pokemon) {
       var name = $routeParams.name;
 
-      pokemonService.byName(name)
-      .then(function (data) {
-        $rootScope.title = data.name;
-        $scope.pokemon = data;
+      Pokemon.get({ name: name }, function (pokemon) {
+        $rootScope.title = pokemon.name;
+        $scope.pokemon = pokemon;
       });
+
     }])
 
     .controller('TabsController', ['$scope', function ($scope) {
