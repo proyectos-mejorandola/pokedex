@@ -43,6 +43,13 @@
       };
     })
 
+    .directive('pokemonCard', function () {
+      return {
+        retrict: 'E',
+        templateUrl: 'partials/pokemon-card.html'
+      }
+    })
+
     .directive('pokemonComments', ['pokemonService', function (pokemonService) {
       return {
         restrict: 'E',
@@ -81,6 +88,20 @@
           };
 
         }
+      };
+    }])
+
+     .directive('pokemonLeft', [function () {
+      return {
+        restrict: 'E',
+        templateUrl:'partials/pokemon-left.html'
+      };
+    }])
+
+    .directive('pokemonRight', [function () {
+      return {
+        restrict: 'E',
+        templateUrl:'partials/pokemon-right.html'
       };
     }]);
 

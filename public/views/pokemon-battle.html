@@ -1,0 +1,26 @@
+
+<section class="cont-pkm-catch" ng-hide="fighters.length===2">
+		<div>
+			<h2>Atrapa dos Pokémon</h2>
+			<h4>Y que comience la batalla !</h4>
+			<figure class="cont-pkbola">
+				<img src="../img/pokebola.png" height="50" width="65" ></figure>
+			<input class="pkm-search" type="text" placeholder="Buscar" ng-model="search.name">
+		</div>
+		<article class="pkm-find-content" ng-repeat="pokemon in pokemons | filter: search">
+			<span class="pkm-name">{{pokemon.name}}</span>
+			<figure class="cont-pkm-img">
+				<img  class="pkm-img" ng-src="{{pokemon.name | imageify}}" ng-click="addFighter(pokemon)" width="140" height="140">
+			</figure>
+		</article>
+</section>
+
+<section class="cont-battle" ng-class="{center:fighters.length===2}">
+	<h1>Pokemon Battle</h1>
+	<pokemon-left></pokemon-left>
+	<span class="damage-left" ng-class="{dleft:damageLeft}">PJ 1</span>
+	<span class="damage-right" ng-class="{dright:damageRight}">PJ 2</span>
+	<span class="vs">Vs</span>
+	<pokemon-right></pokemon-right>
+</section>
+

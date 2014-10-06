@@ -1,0 +1,24 @@
+<div class="pkm-left">
+		<span class="pkm-hp-left" style="width:{{fighters[0].stats.hp}}px">HP</span>
+		
+		<img src="img/strikeLeft.png" title="Atacar!" class="pkm-strike-left" ng-click="strike(fighters[0])" ng-hide="strikeLeft">
+		<figure class="cont-img-fighter">
+			<img ng-src="{{fighters[0].name | imageify}}" width="150">
+		</figure>
+		<div class="cont-stats">
+			<h3>{{fighters[0].name}}</h3>
+			<h4>Stats</h4>
+			<div class="cont-pkm-stats">
+				<span class="pkm-stat">Hp</span>
+				<span class="pkm-stat-value">{{fighters[0].stats.hp}}</span>
+			</div>
+			<div class="cont-pkm-stats">
+				<span class="pkm-stat">Attack</span>
+				<span class="pkm-stat-value">{{fighters[0].stats.attack}}</span>
+			</div>
+			<div class="cont-pkm-stats">
+			<span class="pkm-stat">Defense</span>
+				<span class="pkm-stat-value">{{fighters[0].stats.defense}}</span>
+			</div>
+		</div>
+</div>
