@@ -9,7 +9,17 @@ body {
 .navbar-brand img {
   width: 24px;
 }
-
+.nav-right{
+  background-color: #fcfcfc;
+  border-radius: 3px;
+  float: right;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 0.3em;
+  padding-left: 0.7em;
+  width: 120px;
+}
 .avatar {
   max-width: 480px;
   margin-bottom: 20px;
@@ -158,4 +168,165 @@ body {
 .pokemon pokemon-type {
   font-size: 22px;
 }
+
+/* Pokemon Battle Style */
+
+.cont-pkm-catch {
+  display: inline-block;
+  width: 30%;
+}
+.cont-pkbola {
+  display: inline-block;
+  height: 50px;
+  margin-right: -12px;
+  width: 65px;
+}
+.pkm-search{
+  margin-bottom: 2em;
+  width: 130px;
+}
+.pkm-find-content {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.cont-pkm-img {
+  height: 150px;
+  width: 130px;
+}
+.cont-pkm-img img {
+  padding: 0.5em;
+}
+.pkm-img:hover {
+  border-radius: 5px;
+  border: 2px solid #f77e66;
+  cursor: pointer;
+  transition:0.5s;
+}
+.pkm-name {
+  background-color: #f73711;
+  border-radius: 5px;
+  color: white;
+  padding: 2px;
+}
+.cont-battle {
+  height: 700px;
+  position: fixed;
+  right: 0px;
+  top: 40px;
+  width: 70%;
+}
+.cont-battle h1{
+  margin: 0 auto;
+  padding-right: 1em;
+  padding: 1em;
+  text-align: center;
+  width: 300px;
+}
+.center {
+  margin-right: 15%;
+  transition:1s;
+}
+.vs{
+  color: #f73711;
+  font-size: 2em;
+  padding-left: 8%; 
+  position: absolute;
+  top: 350px;
+}
+.damage-left{
+  background-color:gray;
+  border-radius: 3px;
+  color: white;
+  left: 20%;
+  position: absolute;
+  text-align: right;
+  top: 215px;
+  width: 40px;
+  z-index: -1;
+}
+.damage-right{
+  background-color: gray;
+  border-radius: 3px;
+  color: white;
+  position: absolute;
+  right: 20%;
+  top: 215px;
+  width: 40px;
+  z-index: -1;
+}
+.dleft{
+  left:75%;
+   transition:0.5s;
+}
+.dright{
+  right: 75%;
+   transition:0.5s;
+}
+.pkm-left {
+  display: inline-block;
+  width: 40%;
+}
+.pkm-right {
+  float: right;
+  width: 40%;
+}
+.pkm-hp-left {
+  background-color: #f73711;
+  color: white;
+  float: left;
+  margin-left: 1em;
+}
+.pkm-strike-left {
+  cursor: pointer;
+  float: right;
+  width: 40px;
+}
+.pkm-hp-right {
+  background-color: #f73711;
+  color: white;
+  float: right;
+  margin-right: 1em;
+}
+.pkm-strike-right {
+  cursor: pointer;
+  float: left;
+  width: 40px;
+}
+.cont-img-fighter {
+  height: 200px;
+  line-height: 200px;
+  margin: 20px auto;
+  text-align: center;
+  width: 70%;
+}
+.cont-stats {
+  margin: 0 auto;
+  width: 70%;
+}
+.cont-stats h3{
+  font-size: 1.5em;
+  margin: 0 auto;
+  text-align: center;
+  width: 120px;
+}
+.cont-stats h4 {
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+  width: 150px;
+}
+.cont-pkm-stats {
+  margin: 0 auto;
+  padding: 1em;
+  width: 70%;
+}
+.pkm-stat {
+  margin-bottom: 1em; 
+}
+.pkm-stat-value {
+  float: right;
+}
+
+
+
 

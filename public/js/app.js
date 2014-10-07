@@ -2,6 +2,7 @@
 
   var app = angular.module('pokedex', [
     'ngRoute',
+    'angular-md5',
     'pokedex.controllers',
     'pokedex.directives',
     'pokedex.filters',
@@ -14,6 +15,10 @@
       .when('/', {
         templateUrl: 'views/pokedex.html',
         controller: 'PokedexController'
+      })
+      .when('/battle', {
+        templateUrl: 'views/pokemon-battle.html',
+        controller: 'BattleController'
       })
       .when('/:type', {
         templateUrl: 'views/pokedex.html',
