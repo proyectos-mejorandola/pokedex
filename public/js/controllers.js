@@ -29,12 +29,17 @@
 
     .controller('PokemonController', ['$scope', '$routeParams', 'pokemonService', function ($scope, $routeParams, pokemonService) {
       var name = $routeParams.name;
-      $scope.pokemon = {};
+      $scope.error;
+
 
       pokemonService.byName(name)
       .then(function (data) {
         $scope.pokemon = data;
+      }, function (reason) {
+        $scope.error = reason;
+        console.log(reason);
       });
+
     }])
 
     .controller('TabsController', function () {

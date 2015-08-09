@@ -30,7 +30,7 @@
           if (results.length > 0) {
             deferred.resolve(results[0]);
           } else {
-            deferred.reject();
+            deferred.reject('Pokemon not found');
           }
 
         });
