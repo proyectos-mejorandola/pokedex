@@ -42,6 +42,12 @@
         templateUrl: 'partials/pokemon-type.html'
       };
     })
+    .directive('pokemonCard', function () {
+      return {
+        restrict: 'E',
+        templateUrl: 'partials/pokemon-card.html'
+      };
+    })
 
     .directive('pokemonComments', ['pokemonService', function (pokemonService) {
       return {
