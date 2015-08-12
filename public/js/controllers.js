@@ -44,12 +44,16 @@
 
     }])
 
-    .controller('TabsController', function () {
-      this.tab = 1;
-
-      this.selectTab = function (tab) {
-        this.tab = tab;
+    .controller('TabsController', ['$scope', function ($scope) {
+      $scope.tab = 'Pokédex';
+      $scope.isSelected = function (clickEvent) {
+        $scope.tab = clickEvent.target.text;
+        console.log($scope.tab);
       };
-    });
+
+      $scope.isActive = function (tab) {
+        return tab === $scope.tab;
+      }
+    }]);
 
 })(_);
