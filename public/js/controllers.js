@@ -53,7 +53,8 @@
 
       $scope.isActive = function (tab) {
         return tab === $scope.tab;
-      }
+      };
+      
     }]);
 
 })(_);

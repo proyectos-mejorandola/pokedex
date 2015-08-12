@@ -21,7 +21,7 @@
         </div>
       </div>
     </form>
-    <blockquote ng-repeat="comment in comments">
+    <blockquote ng-repeat="comment in comments | orderBy: '-date'">
       <p>{{comment.body}}</p>
       <footer>
         Comment by 
