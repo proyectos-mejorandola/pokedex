@@ -1,9 +1,25 @@
 <div>
   <div class="page-header">
-    <h1>Pokédex <small class="pull-right">Showing <span class="badge">{{pokemons.length}}</span> Pokémons</small></h1>
-    <h2 ng-if="type"><span class="label type-{{type | lowercase}}">{{type}}</span></h2>
+    <div class="row">
+      <div class="col-xs-4">
+        <h1>Pokédex</h1>
+        <h2 ng-if="type"><span class="label type-{{type | lowercase}}">{{type}}</span></h2>
+      </div>
+      <div class="col-xs-4">
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon glyphicon glyphicon-search" id="addon"></span>
+          <input ng-model="searchTerm" ng-keyup="search()" type="text" class="form-control" placeholder="Search Pokemon" aria-describedby="addon">
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="pull-right">
+          <h1><small>Showing <span class="badge">{{pokemons.length}}</span> Pokémons</small></h1>
+        </div>
+      </div>
+    </div>
+    
   </div>
-  <div class="row" ng-repeat="group in groupped">
+    <div class="row" ng-repeat="group in groupped">
     <div class="col-lg-3" ng-repeat="pokemon in group">
       <pokemon-card></pokemon-card>
     </div>

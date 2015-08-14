@@ -2,22 +2,39 @@
 
   angular.module('pokedex.controllers', [])
     .controller('PokedexController', ['$rootScope', '$scope', '$routeParams', 'pokemonService', function ($rootScope, $scope, $routeParams, pokemonService) {
-      $rootScope.title = '';
+      
       var type = $routeParams.type;
+      var pokemons = [];
+
+      $rootScope.title = '';
 
       if (type) {
         $scope.type = type;
 
         pokemonService.byType(type).then(function (data) {
-          $scope.pokemons = data
+          $scope.pokemons = pokemons = data
           $scope.groupped = partition(data, 4);
         });
       } else {
         pokemonService.all().then(function (data) {
-          $scope.pokemons = data;
+          $scope.pokemons = pokemons = data;
           $scope.groupped = partition(data, 4);
         });
       }
+
+      $scope.search = function () {
+        var result = pokemons;
+        if ($scope.searchTerm) {
+          result = pokemons.filter(function (pokemon) {
+            var name = pokemon && pokemon.name || "";
+
+            return name.toLowerCase().indexOf($scope.searchTerm.toLowerCase()) !== -1;
+          });
+        }
+
+        $scope.pokemons = result;
+        $scope.groupped = partition(result, 4);
+      };
 
 
       function partition(data, n) {
@@ -54,7 +71,7 @@
       $scope.isActive = function (tab) {
         return tab === $scope.tab;
       };
-      
+
     }]);
 
 })(_);
