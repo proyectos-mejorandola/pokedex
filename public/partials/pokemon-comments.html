@@ -27,7 +27,7 @@
         <img ng-if="!comment.anonymous" width="48px" class="img-circle" src="http://gravatar.com/avatar/{{comment.email | gravatar}}"> 
         <a ng-if="!comment.anonymous" href="mailto:{{comment.email}}">{{comment.email}}</a> 
         <em ng-if="comment.anonymous">Anonymous</em>
-        on <span>{{comment.date | date : 'medium'}}</span>
+        commented on <span>{{comment.date | date : 'medium'}}</span>
       </footer>
     </blockquote>
   </div>

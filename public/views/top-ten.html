@@ -1,0 +1,10 @@
+<h1>Top 10</h1>
+<hr />
+<div class="container">
+	<div class="row" ng-repeat="group in groupped">
+		<h2 >Nº {{indexStart($index)}}</h2>
+		<div class="col-lg-4" ng-repeat="pokemon in group">
+		  <pokemon-card></pokemon-card>
+		</div>
+	</div>
+</div>

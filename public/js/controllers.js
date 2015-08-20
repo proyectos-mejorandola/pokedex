@@ -1,18 +1,27 @@
 (function (_) {
 
+  
+
   angular.module('pokedex.controllers', [])
     .controller('PokedexController', ['$rootScope', '$scope', '$routeParams', 'pokemonService', function ($rootScope, $scope, $routeParams, pokemonService) {
       
       var type = $routeParams.type;
+
       var pokemons = [];
 
       $rootScope.title = '';
+
+      function partition(data, n) {
+        return _.chain(data).groupBy(function (element, index) {
+          return Math.floor(index / n);
+        }).toArray().value();
+      }
 
       if (type) {
         $scope.type = type;
 
         pokemonService.byType(type).then(function (data) {
-          $scope.pokemons = pokemons = data
+          $scope.pokemons = pokemons = data;
           $scope.groupped = partition(data, 4);
         });
       } else {
@@ -36,19 +45,10 @@
         $scope.groupped = partition(result, 4);
       };
 
-
-      function partition(data, n) {
-        return _.chain(data).groupBy(function (element, index) {
-          return Math.floor(index / n);
-        }).toArray().value();
-      }
-
     }])
 
     .controller('PokemonController', ['$rootScope', '$scope', '$routeParams', 'pokemonService', function ($rootScope, $scope, $routeParams, pokemonService) {
       var name = $routeParams.name;
-      $scope.error;
-
 
       pokemonService.byName(name)
       .then(function (data) {
@@ -56,7 +56,6 @@
         $scope.pokemon = data;
       }, function (reason) {
         $scope.error = reason;
-        console.log(reason);
       });
 
     }])
@@ -65,13 +64,26 @@
       $scope.tab = 'Pokédex';
       $scope.isSelected = function (clickEvent) {
         $scope.tab = clickEvent.target.text;
-        console.log($scope.tab);
       };
 
       $scope.isActive = function (tab) {
         return tab === $scope.tab;
       };
 
+    }])
+    .controller('TopTenController', ['$scope', 'pokemonService', function ($scope, pokemonService) {
+
+      function topTen(data) {
+        return _.chain(data).groupBy('rate').toArray().value().reverse();
+      }
+
+      $scope.indexStart = function (index) {
+        return ++index;
+      } 
+      
+      pokemonService.byRate().then(function (data) {
+        $scope.groupped = topTen(data);
+      });
     }]);
 
 })(_);

@@ -10,6 +10,9 @@
 <div ng-if="pokemon">
   <div class="page-header">
     <pokemon-name></pokemon-name>
+    <a href="/#top-ten/" class="btn btn-primary">Top 10</a>
+    <h4>Rating</h4>
+    <pokemon-rating name="{{pokemon.name}}"></pokemon-rating>
   </div>
   <div class="row">
     <div class="col-md-6">
@@ -42,5 +45,7 @@
   <!-- comments -->
   <pokemon-comments name="{{pokemon.name}}"></pokemon-comments>
   <!-- /comments -->
+  
 </div>
+<hr />
 <!-- /pokemon -->

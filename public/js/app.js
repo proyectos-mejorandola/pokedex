@@ -3,6 +3,7 @@
   var app = angular.module('pokedex', [
     'ngRoute',
     'angular-md5',
+    'ui.bootstrap',
     'pokedex.controllers',
     'pokedex.directives',
     'pokedex.filters',
@@ -15,6 +16,10 @@
       .when('/', {
         templateUrl: 'views/pokedex.html',
         controller: 'PokedexController'
+      })
+      .when('/top-ten', {
+        templateUrl: 'views/top-ten.html',
+        controller: 'TopTenController'
       })
       .when('/:type', {
         templateUrl: 'views/pokedex.html',
