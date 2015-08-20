@@ -2,6 +2,14 @@ body {
   padding-top: 50px;
 }
 
+.u-margin {
+  margin: 5px;
+}
+
+.u-center {
+  text-align: center;
+}
+
 .navbar-brand {
   font-weight: 800;
 }
@@ -25,6 +33,7 @@ body {
 
 .type {
   margin-left: 1px;
+  display: inline-block;
 }
 
 .type-normal {

@@ -1,30 +1,41 @@
 <!-- pokemon -->
-<div>
+<div ng-if="!pokemon">
+  <div class="page-header">
+    <h1>Error</h1>
+  </div>
+  <div class="alert alert-danger">
+    <p>{{error}}</p>
+  </div>
+</div>
+<div ng-if="pokemon">
   <div class="page-header">
     <pokemon-name></pokemon-name>
+    <a href="/#top-ten/" class="btn btn-primary">Top 10</a>
+    <h4>Rating</h4>
+    <pokemon-rating name="{{pokemon.name}}"></pokemon-rating>
   </div>
   <div class="row">
     <div class="col-md-6">
       <pokemon-image></pokemon-image>
     </div>
     <!-- Tabs -->
-    <div class="col-md-6" ng-controller="TabsController as tabs">
+    <div class="col-md-6" ng-controller="TabsController">
       <ul class="nav nav-tabs nav-justified">
-        <li ng-class="{ active:tabs.tab === 1 }"><a ng-click="tabs.selectTab(1)">Pokédex</a></li>
-        <li ng-class="{ active:tabs.tab === 2 }"><a ng-click="tabs.selectTab(2)">Stats</a></li>
-        <li ng-class="{ active:tabs.tab === 3 }"><a ng-click="tabs.selectTab(3)">Evolution</a></li>
+        <li ng-class="{ active: isActive('Pokédex') }"><a ng-click="isSelected($event)">Pokédex</a></li>
+        <li ng-class="{ active: isActive('Stats') }"><a ng-click="isSelected($event)">Stats</a></li>
+        <li ng-class="{ active: isActive('Evolution') }"><a ng-click="isSelected($event)">Evolution</a></li>
       </ul>
       <div class="tab-content">
         <!-- Pokedex -->
-        <div ng-show="tabs.tab === 1">
+        <div ng-show="isActive('Pokédex')">
           <pokemon-data></pokemon-data>
         </div>
         <!-- Stats -->
-        <div ng-show="tabs.tab === 2">
+        <div ng-show="isActive('Stats')">
           <pokemon-stats></pokemon-stats>
         </div>
         <!-- Evolution -->
-        <div ng-show="tabs.tab === 3">
+        <div ng-show="isActive('Evolution')">
           <pokemon-evolution></pokemon-evolution>
         </div>
       </div>
@@ -34,5 +45,7 @@
   <!-- comments -->
   <pokemon-comments name="{{pokemon.name}}"></pokemon-comments>
   <!-- /comments -->
+  
 </div>
+<hr />
 <!-- /pokemon -->

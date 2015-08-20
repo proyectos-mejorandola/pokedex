@@ -42,6 +42,46 @@
         templateUrl: 'partials/pokemon-type.html'
       };
     })
+    .directive('pokemonCard', function () {
+      return {
+        restrict: 'E',
+        templateUrl: 'partials/pokemon-card.html'
+      };
+    })
+
+    .directive('pokemonRating', ['pokemonService', function (pokemonService) {
+      return {
+        restrict: 'E',
+        templateUrl: 'partials/pokemon-rating.html',
+        scope: {
+          name: '@name'
+        },
+        link: function (scope, el, attr) {
+          attr.$observe('name', function (value) {
+            if (value) {
+              scope.name = value;
+              var pokemonData = pokemonService.getStorage(value);
+              scope.rate = pokemonData.rate;
+            }
+          });
+        },
+        controller: function ($scope) {
+          $scope.max = 10;
+          $scope.isReadonly = false;
+
+          $scope.ratingStates = [
+            {stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'},
+            {stateOff: 'glyphicon-off'}
+          ];
+
+          $scope.$watch('rate', function (newVal, oldVal) {
+           if(newVal !== oldVal) {
+            pokemonService.saveRate($scope.name, newVal);
+           }
+          });
+        }
+      };
+    }])
 
     .directive('pokemonComments', ['pokemonService', function (pokemonService) {
       return {
@@ -54,12 +94,14 @@
           attributes.$observe('name', function (value) {
             if (value) {
               scope.name = value;
-              scope.comments = pokemonService.getComments(value);
+              var pokemonData = pokemonService.getStorage(value);
+              scope.comments = pokemonData.comments;
             }
           });
         },
         controller: function ($scope) {
-          $scope.comments = pokemonService.getComments($scope.name);
+          var pokemonData = pokemonService.getStorage($scope.name);
+          $scope.comments = pokemonData.comments;
           $scope.comment = {};
           $scope.show = false;
 
@@ -76,10 +118,11 @@
           $scope.addComment = function () {
             $scope.comment.date = Date.now();
             pokemonService.saveComment($scope.name, $scope.comment);
-            $scope.comments = pokemonService.getComments($scope.name);
+            var pokemonData = pokemonService.getStorage($scope.name);
+            $scope.comments = pokemonData.comments;
             $scope.comment = {};
           };
-
+          
         }
       };
     }]);

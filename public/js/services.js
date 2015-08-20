@@ -1,4 +1,4 @@
-(function () {
+(function (_) {
 
   angular.module('pokedex.services', [])
 
@@ -30,7 +30,7 @@
           if (results.length > 0) {
             deferred.resolve(results[0]);
           } else {
-            deferred.reject();
+            deferred.reject('Pokemon not found');
           }
 
         });
@@ -55,24 +55,59 @@
         return deferred.promise;
       }
 
-
-      function saveComment(pokemon, comment) {
-        var comments = getComments(pokemon);
-
-        comments.push(comment);
-        localStorage.setItem(pokemon, JSON.stringify(comments));
+      function byRate() {
+        var deferred = $q.defer(); 
+       
+        all().then(function (data) {
+          var results = [];
+          for(var i=0; i < localStorage.length; i++) {
+            var pokemonKeys = localStorage.key(i);
+            var pokemonsStorage = JSON.parse(localStorage.getItem(pokemonKeys));
+            var pokemonsData = data.filter(function (pokemons) {
+              return pokemons.name === pokemonKeys;
+            });
+            pokemonsData[0].rate = pokemonsStorage.rate;
+            results.push(pokemonsData[0]);
+          }
+          deferred.resolve(results);
+          
+          
+        });
+        return deferred.promise;
+      }
+      
+      function Pokemon() {
+        this.comments = [];
+        this.rate;
       }
 
-      function getComments(pokemon) {
-        var comments = localStorage.getItem(pokemon);
+      function saveRate(pokemonName, rate) {
+        var pokemon = new Pokemon();
+        pokemon = getStorage(pokemonName);
+        pokemon.rate = rate;  
 
-        if (!comments) {
-          comments = [];
+        localStorage.setItem(pokemonName, JSON.stringify(pokemon));
+      }
+
+      function saveComment(pokemonName, comment) {
+        var pokemon = new Pokemon();
+        pokemon = getStorage(pokemonName);
+
+        pokemon.comments.push(comment);
+        localStorage.setItem(pokemonName, JSON.stringify(pokemon));
+      }
+
+      function getStorage(pokemonName) {
+        var pokemon = new Pokemon();
+        pokemon = localStorage.getItem(pokemonName);
+       
+        if (!pokemon) {
+          var pokemon = new Pokemon();
         } else {
-          comments = JSON.parse(comments);
+          pokemon = JSON.parse(pokemon);
         }
 
-        return comments;
+        return pokemon;
       }
 
       return {
@@ -80,9 +115,11 @@
         byName: byName,
         byType: byType,
         saveComment: saveComment,
-        getComments: getComments
+        getStorage: getStorage,
+        byRate: byRate,
+        saveRate: saveRate
       };
 
     }]);
 
-})();
+})(_);
